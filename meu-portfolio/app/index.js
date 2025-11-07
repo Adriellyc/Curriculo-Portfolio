@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity, Animated } from "react-native";
 import { useRouter } from "expo-router";
 import { useRef } from "react";
-import { LinearGradient } from "expo-linear-gradient";
 import { MaterialIcons } from '@expo/vector-icons';
 
 export default function Home() {
@@ -28,12 +27,7 @@ export default function Home() {
   ];
 
   return (
-    <LinearGradient
-      colors={['#1e2a78', '#0d1b3d']}
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 1 }}
-      style={styles.container}
-    >
+    <View style={styles.container}>
       <Text style={styles.title}>Meu Portfólio</Text>
       <Text style={styles.subtitle}>Explore minhas experiências e projetos</Text>
 
@@ -44,7 +38,7 @@ export default function Home() {
           onPress={() => handlePress(`/${route.name}`)}
           activeOpacity={0.8}
         >
-          <MaterialIcons name={route.icon} size={24} color="#0d1b3d" style={{ marginRight: 12 }} />
+          <MaterialIcons name={route.icon} size={20} color="#444" style={{ marginRight: 10 }} />
           <Text style={styles.buttonText}>{route.name.split("-").map(capitalize).join(" ")}</Text>
         </AnimatedTouchable>
       ))}
@@ -54,10 +48,10 @@ export default function Home() {
         onPress={() => handlePress("/modal")}
         activeOpacity={0.8}
       >
-        <MaterialIcons name="email" size={24} color="#fff" style={{ marginRight: 12 }} />
+        <MaterialIcons name="email" size={20} color="#fff" style={{ marginRight: 10 }} />
         <Text style={[styles.buttonText, { color: "#fff" }]}>Contato</Text>
       </AnimatedTouchable>
-    </LinearGradient>
+    </View>
   );
 }
 
@@ -69,50 +63,38 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    paddingHorizontal: 25,
-    paddingVertical: 50,
+    backgroundColor: "#f5f5f5", // fundo suave
+    paddingHorizontal: 20,
   },
   title: {
-    fontSize: 42,
-    fontWeight: "900",
-    color: "#FFC857",
-    textShadowColor: "#ffa726",
-    textShadowOffset: { width: 3, height: 3 },
-    textShadowRadius: 6,
-    marginBottom: 12,
+    fontSize: 28,           // menor que antes
+    fontWeight: "700",
+    color: "#333",
+    marginBottom: 8,
   },
   subtitle: {
-    fontSize: 20,
-    color: "#e0c097",
-    marginBottom: 40,
-    fontWeight: "500",
+    fontSize: 16,
+    color: "#666",
+    marginBottom: 30,
     textAlign: "center",
   },
   button: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#FFC857",
-    paddingVertical: 16,
-    paddingHorizontal: 40,
-    borderRadius: 40,
-    marginVertical: 12,
-    width: "85%",
-    shadowColor: "#ffb700",
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.4,
-    shadowRadius: 10,
-    elevation: 8,
+    backgroundColor: "#e0e0e0", // botão suave
+    paddingVertical: 12,
+    paddingHorizontal: 30,
+    borderRadius: 30,
+    marginVertical: 8,
+    width: "80%",
   },
   contactButton: {
-    backgroundColor: "#d94f3d",
-    shadowColor: "#d94f3d",
+    backgroundColor: "#888", // botão de contato discreto
   },
   buttonText: {
-    fontSize: 20,
-    fontWeight: "700",
-    color: "#0d1b3d",
-    textAlign: "center",
+    fontSize: 16,
+    fontWeight: "500",
+    color: "#333",
   },
 });
-cnpx expo start --tunnelnpx expo start --tunnel
