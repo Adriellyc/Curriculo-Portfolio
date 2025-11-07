@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "@expo/vector-icons": "^15.0.3",
     "expo": "^54.0.22",
+    "expo-linear-gradient": "^15.0.7",
     "react-native": "^0.82.1",
     "react-native-gesture-handler": "^2.29.1",
     "react-native-paper": "^5.14.5",
