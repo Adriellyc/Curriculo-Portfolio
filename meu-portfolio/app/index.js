@@ -115,3 +115,4 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
+cnpx expo start --tunnelnpx expo start --tunnel
