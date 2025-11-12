@@ -1,7 +1,7 @@
-import { View, Text, StyleSheet, TouchableOpacity, Animated } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Animated, Image } from "react-native";
 import { useRouter } from "expo-router";
 import { useRef } from "react";
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function Home() {
   const router = useRouter();
@@ -28,6 +28,9 @@ export default function Home() {
 
   return (
     <View style={styles.container}>
+      {/* FOTO EM CÍRCULO */}
+    <Image source={require("../assets/images/foto.jpeg")} style={styles.profileImage} />
+
       <Text style={styles.title}>Meu Portfólio</Text>
       <Text style={styles.subtitle}>Explore minhas experiências e projetos</Text>
 
@@ -39,13 +42,15 @@ export default function Home() {
           activeOpacity={0.8}
         >
           <MaterialIcons name={route.icon} size={20} color="#444" style={{ marginRight: 10 }} />
-          <Text style={styles.buttonText}>{route.name.split("-").map(capitalize).join(" ")}</Text>
+          <Text style={styles.buttonText}>
+            {route.name.split("-").map(capitalize).join(" ")}
+          </Text>
         </AnimatedTouchable>
       ))}
 
       <AnimatedTouchable
         style={[styles.button, styles.contactButton, { transform: [{ scale: animation }] }]}
-        onPress={() => handlePress("/modal")}
+        onPress={() => handlePress("/contato")}
         activeOpacity={0.8}
       >
         <MaterialIcons name="email" size={20} color="#fff" style={{ marginRight: 10 }} />
@@ -63,11 +68,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#f5f5f5", // fundo suave
+    backgroundColor: "#f5f5f5",
     paddingHorizontal: 20,
   },
+  profileImage: {
+    width: 120,
+    height: 120,
+    borderRadius: 60, // deixa a imagem redonda
+    marginBottom: 20,
+    borderWidth: 3,
+    borderColor: "#ccc", // contorno leve
+  },
   title: {
-    fontSize: 28,           // menor que antes
+    fontSize: 28,
     fontWeight: "700",
     color: "#333",
     marginBottom: 8,
@@ -82,7 +95,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#e0e0e0", // botão suave
+    backgroundColor: "#e0e0e0",
     paddingVertical: 12,
     paddingHorizontal: 30,
     borderRadius: 30,
@@ -90,7 +103,7 @@ const styles = StyleSheet.create({
     width: "80%",
   },
   contactButton: {
-    backgroundColor: "#888", // botão de contato discreto
+    backgroundColor: "#888",
   },
   buttonText: {
     fontSize: 16,
