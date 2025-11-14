@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     fontSize: 26,
     fontWeight: "bold",
     marginBottom: 20,
-    color: "#282a2cd3",
+    color: "#1377dbd3",
     textAlign: "center",
   },
   card: {
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   botaoVoltar: {
-    backgroundColor: "#518ad4ff",
+    backgroundColor: "#1377dbd3",
     padding: 15,
     borderRadius: 30,
     alignSelf: "center",

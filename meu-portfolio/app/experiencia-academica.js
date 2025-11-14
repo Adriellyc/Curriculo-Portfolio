@@ -3,35 +3,44 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Link } from "expo-router";
 import { useRef, useEffect } from "react";
 
-export default function ExperienciaProfissional() {
-  const experiencias = [
+export default function ExperienciaAcademica() {
+  const experienciasAcademicas = [
     {
-      cargo: "Estagiária de Pedagogia",
-      empresa: "Escola XYZ",
+      curso: "Sistemas para Internet",
+      instituicao: "Universidade Católica de Pernambuco (UNICAP)",
       periodo: "2024 - Atual",
       descricao:
-        "Apoio nas atividades pedagógicas, acompanhamento de alunos e contribuição para o planejamento de aulas e projetos educativos.",
+        "Formação voltada para desenvolvimento web, APIs, banco de dados, lógica de programação e tecnologias modernas do mercado.",
     },
     {
-      cargo: "Estagiária de TI",
-      empresa: "Neurotech",
-      periodo: "2025 - Atual",
+      curso: "Pedagogia",
+      instituicao: "UNINASSAU",
+      periodo: "2023 - Atual",
       descricao:
-        "Atuação com análise de dados e suporte no desenvolvimento de soluções tecnológicas voltadas à inovação e eficiência.",
+        "Estudos sobre educação infantil, processos de aprendizagem, desenvolvimento cognitivo e práticas pedagógicas.",
     },
     {
-      cargo: "Assistente Educacional",
-      empresa: "Escola ABC",
-      periodo: "2023 - 2024",
+      curso: "Curso de Desenvolvimento Mobile",
+      instituicao: "Digital Academy",
+      periodo: "2024",
       descricao:
-        "Suporte às práticas de ensino e aprendizagem, acompanhamento de turmas e auxílio nas atividades escolares.",
+        "Curso com foco em React Native, Expo, integração com APIs e publicação de aplicativos.",
+    },
+    {
+      curso: "Formação em UX/UI Design",
+      instituicao: "Tech School",
+      periodo: "2023",
+      descricao:
+        "Aprendizado sobre design centrado no usuário, criação de interfaces intuitivas e pesquisa de experiência do usuário.",
     },
   ];
 
-  const animatedValues = useRef(experiencias.map(() => new Animated.Value(0))).current;
+  const animatedValues = useRef(
+    experienciasAcademicas.map(() => new Animated.Value(0))
+  ).current;
 
   useEffect(() => {
-    const animations = experiencias.map((_, i) =>
+    const animations = experienciasAcademicas.map((_, i) =>
       Animated.timing(animatedValues[i], {
         toValue: 1,
         duration: 600,
@@ -45,9 +54,9 @@ export default function ExperienciaProfissional() {
   return (
     <View style={styles.background}>
       <ScrollView contentContainerStyle={styles.container}>
-        <Text style={styles.title}>💼 Experiência Profissional</Text>
+        <Text style={styles.title}>📚 Experiência Acadêmica</Text>
 
-        {experiencias.map((item, index) => (
+        {experienciasAcademicas.map((item, index) => (
           <Animated.View
             key={index}
             style={{
@@ -69,8 +78,8 @@ export default function ExperienciaProfissional() {
               end={{ x: 1, y: 1 }}
               style={styles.card}
             >
-              <Text style={styles.cardTitle}>{item.cargo}</Text>
-              <Text style={styles.cardSub}>{item.empresa}</Text>
+              <Text style={styles.cardTitle}>{item.curso}</Text>
+              <Text style={styles.cardSub}>{item.instituicao}</Text>
               <Text style={styles.cardPeriod}>{item.periodo}</Text>
               <Text style={styles.cardDesc}>{item.descricao}</Text>
             </LinearGradient>
@@ -91,7 +100,7 @@ export default function ExperienciaProfissional() {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: "#ffffff", // fundo branco limpo
+    backgroundColor: "#ffffff",
   },
   container: {
     padding: 20,
@@ -101,7 +110,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 26,
     fontWeight: "bold",
-    color: "#2563eb", // azul destaque
+    color: "#1377dbd3",
     textAlign: "center",
     marginBottom: 20,
   },
@@ -119,18 +128,18 @@ const styles = StyleSheet.create({
   cardTitle: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#1e3a8a", // azul escuro
+    color: "#1e3a8a",
     marginBottom: 5,
   },
   cardSub: {
     fontSize: 16,
-    color: "#475569", // cinza azulado
+    color: "#475569",
     marginBottom: 4,
   },
   cardPeriod: {
     fontSize: 14,
     fontStyle: "italic",
-    color: "#6c95d6ff", // azul bebê
+    color: "#6c95d6ff",
     marginBottom: 8,
   },
   cardDesc: {
@@ -140,7 +149,7 @@ const styles = StyleSheet.create({
     textAlign: "justify",
   },
   botaoVoltar: {
-    backgroundColor: "#3b82f6",
+    backgroundColor: "#1377dbd3",
     padding: 15,
     borderRadius: 30,
     alignSelf: "center",
