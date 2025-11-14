@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "CurriculoPortfolio",
+    "slug": "curriculo-portfolio",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./meu-portfolio/assets/icon.png",
+    "splash": {
+      "image": "./meu-portfolio/assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "extra": {
+      "eas": {
+        "projectId": "780f8f9f-3dd7-4fec-be06-dd324351d900"
+      }
+    },
+    "owner": "adriellycampossoares",
+    "android": {
+      "package": "com.adriellycampossoares.curriculoportfolio",
+      "adaptiveIcon": {
+        "foregroundImage": "./meu-portfolio/assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "ios": {
+      "bundleIdentifier": "com.adriellycampossoares.curriculoportfolio",
+      "supportsTablet": true,
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "plugins": []
+  }
+}
+
